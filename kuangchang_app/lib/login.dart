@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shake_animation_widget/shake_animation_widget.dart';
+import 'server_connection.dart';
+import 'user_msg.dart';
 
 //用户名输入框的焦点控制
 FocusNode _userNameFocusNode = new FocusNode();
@@ -90,6 +92,21 @@ Widget buildLoginWidget() {
           child: ElevatedButton(
             child: Text("登录"),
             onPressed: () {
+              /*WebSocketUtility().initWebSocket(onOpen: () {
+                print("connected");
+              }, onMessage: (data) {
+                print(data);
+              }, onError: (e) {
+                print(e);
+              });*/
+              String userAccount = _userNameController.text;
+              String userPassword = _passwordController.text;
+              int msglen=userAccount.length+userPassword.length+2;
+
+              String msg="LoginRequest"+msglen.toString()+"\n"+userAccount+"\n"+userPassword+"\n";
+              Login(msg);
+              UserMsg.UserAccount=userAccount;
+              //WebSocketUtility().sendMessage("msg");
               //checkLoginFunction();点击登录验证密码正确函数，还没有完成。
               //String userName = _userNameController.text;
               // String userPassrowe = _passwordController.text;

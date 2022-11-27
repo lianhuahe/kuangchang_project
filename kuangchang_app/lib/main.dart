@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:flutter/material.dart';//引入一个flutter的UI库包
 import 'dart:async';
 
@@ -31,6 +32,10 @@ class BlueBox extends StatelessWidget {
   }
 }
 
+=======
+import 'package:flutter/material.dart';
+import 'login.dart';
+>>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
 void main() {
   runApp(MyWidget());
 }
@@ -46,10 +51,14 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.green,
       ),
+<<<<<<< HEAD
       home: const MyHomePage(title: 'my demo'),
       /*body: Center(
         child: Text:('hello world')
       ),*/
+=======
+      home: const LoginPage(),
+>>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
     );
   }
 }

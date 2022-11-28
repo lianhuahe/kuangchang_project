@@ -5,9 +5,11 @@ import 'package:socket_io_client/socket_io_client.dart' as IO;*/
 import 'dart:io';
 import 'dart:convert';
 import 'dart:async';
+import 'dart:typed_data';
 import 'user_msg.dart';
 import 'package:flutter/material.dart';
 import 'package:kuangchang_app/user_msg.dart';
+import 'protofile/loginproto/login.pb.dart';
 /// WebSocket地址
 const String _SOCKET_URL = "ws://123.249.9.132:443/ping";
 
@@ -183,17 +185,17 @@ void dispose() {
 
 
 Socket ?socket;
-void  Login(String msg) async
+void  Login(Uint8List msg) async
 {
   socket = await Socket.connect('123.249.9.132', 443);
   print('try to connect...');
 
   // listen to the received data event stream
-  socket?.listen((event) {
-    msghandle(event);
+  socket?.listen((List<int> reply) {
+    msghandle(reply);
   });
   // send hello
-  socket?.add(utf8.encode(msg));
+  socket?.add(msg);
   heartbeat();
 }
 
@@ -206,32 +208,32 @@ void heartbeat() async
   */
 }
 
-msghandle(msg)
+
+msghandle(List<int> reply)
 {
-  String reply=utf8.decode(msg);
   print(reply);
-  if(reply.contains("LoginReply"))
-  {
-    return LoginHandle(reply);
+  int s1=reply[0],s2=reply[1];
+  List<int> handlereply=[];
+  for(int i=2;i<reply.length;i++)
+    handlereply.add(reply[i]);
+  print(handlereply);
+  if(s1==97&&s2==97){
+    var msg=user_login_reply.fromBuffer(handlereply);
+    return LoginHandle(msg);
+  }
+  else if(s1==97&&s2==98){
+    //return RegisterHandle(msg);
   }
 }
 
-LoginHandle(msg)
+LoginHandle(user_login_reply msg)
 {
-  if(msg[11]=="Y")
+  print(msg);
+  if(msg.issuccess)
   {
     print("login success");
-    String temp="";
-    int i=13;
-    for(;msg[i]!='\n';i++){
-      temp+=msg[i];
-    }i++;
-    UserMsg.UserId=int.parse(temp);
-    temp="";
-    for(;msg[i]!='\n';i++){
-      temp+=msg[i];
-    }i++;
-    UserMsg.UserName=temp;
+    UserMsg.UserId=int.parse(msg.msg[0]);
+    UserMsg.UserName=msg.msg[1];
     print(UserMsg.UserAccount);
     print(UserMsg.UserName);
     print(UserMsg.UserId);
@@ -242,6 +244,21 @@ LoginHandle(msg)
     print("login failed");
     //失败弹窗
   }
-  return "";
+  //return "";
+}
+
+RegisterHandle(msg)
+{
+  if(msg[16]=="Y")
+  {
+    print("register success");
+    //跳转主界面
+  }
+  else
+  {
+    print("login failed");
+    //失败弹窗,账号已存在
+  }
+  //return "";
 }
 

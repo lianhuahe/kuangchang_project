@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:shake_animation_widget/shake_animation_widget.dart';
 import 'server_connection.dart';
 import 'user_msg.dart';
+import 'protofile/loginproto/login.pb.dart';
 
 //用户名输入框的焦点控制
 FocusNode _userNameFocusNode = new FocusNode();
@@ -99,17 +100,17 @@ Widget buildLoginWidget() {
               }, onError: (e) {
                 print(e);
               });*/
-              String userAccount = _userNameController.text;
-              String userPassword = _passwordController.text;
-              int msglen=userAccount.length+userPassword.length+2;
-
-              String msg="LoginRequest"+msglen.toString()+"\n"+userAccount+"\n"+userPassword+"\n";
-              Login(msg);
-              UserMsg.UserAccount=userAccount;
-              //WebSocketUtility().sendMessage("msg");
-              //checkLoginFunction();点击登录验证密码正确函数，还没有完成。
-              //String userName = _userNameController.text;
-              // String userPassrowe = _passwordController.text;
+              user_login_request request=user_login_request.create();
+              request.account=_userNameController.text;
+              request.password=_passwordController.text;
+              var msg=request.writeToBuffer();
+              Uint8List loginrequest=new Uint8List(msg.length+2);
+              loginrequest[0]=97;
+              loginrequest[1]=97;
+              for(int i=0;i<msg.length;i++)
+                loginrequest[i+2]=msg[i];
+              Login(loginrequest);
+              UserMsg.UserAccount=_userNameController.text;
             },
           ),
         )

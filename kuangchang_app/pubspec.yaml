@@ -39,6 +39,9 @@ dependencies:
   shake_animation_widget: ^3.0.3
   web_socket_channel: ^2.2.0
   socket_io_client: ^2.0.0
+  protoc_plugin: ^20.0.1
+  protobuf: ^2.1.0
+  fixnum: ^1.0.1
 
 dev_dependencies:
   flutter_test:

@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:myapp/widgets/CommonTitle.dart';
-import 'package:myapp/widgets/common_floating_action_button.dart';
-import 'package:myapp/widgets/common_form_item.dart';
-import 'package:myapp/widgets/common_image_picker.dart';
+import 'package:kuangchang_app/widgets/CommonTitle.dart';
+import 'package:kuangchang_app/widgets/common_floating_action_button.dart';
+import 'package:kuangchang_app/widgets/common_form_item.dart';
+import 'package:kuangchang_app/widgets/common_image_picker.dart';
 
 class RewardAddPage extends StatefulWidget {
   const RewardAddPage({Key? key}) : super(key: key);

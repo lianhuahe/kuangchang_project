@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/home/tab_index/info/dealindex.dart';
-import 'package:myapp/widgets/search_bar/index.dart';
-import 'package:myapp/routes.dart';
+import 'package:kuangchang_app/pages/home/tab_index/info/dealindex.dart';
+import 'package:kuangchang_app/widgets/search_bar/index.dart';
+import 'package:kuangchang_app/routes.dart';
 import 'info/filtrate_synthesize.dart';
 
 

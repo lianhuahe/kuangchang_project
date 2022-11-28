@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
-import 'package:myapp/pages/home/tab_index/topnavigation.dart';
-import 'package:myapp/pages/reward_add/index.dart';
-import 'package:myapp/widgets/page_content.dart';
+import 'package:kuangchang_app/pages/home/tab_index/topnavigation.dart';
+import 'package:kuangchang_app/pages/login.dart';
+import 'package:kuangchang_app/pages/reward_add/index.dart';
+import 'package:kuangchang_app/widgets/page_content.dart';
 import 'pages/home/index.dart';
-import 'pages/login.dart';
+
 import 'pages/not_found.dart';
 import 'pages/register.dart';
 import 'pages/goods_detail/index.dart';
 
 class Routes {
   //1.路由名称
-  static String home = '/';
-  static String login = '/login';
+  static String home = '/home';
+  static String login = '/';
   static String goodsDetail = '/goodsDetail/:goodsId';
   static String register = '/register';
   static String  topnavigation = '/topnavigation';

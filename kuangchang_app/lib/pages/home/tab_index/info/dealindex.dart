@@ -1,4 +1,4 @@
-import 'package:myapp/pages/home/tab_index/info/item_widget.dart';
+import 'package:kuangchang_app/pages/home/tab_index/info/item_widget.dart';
 
 import 'data.dart';
 import 'package:flutter/material.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/home/tab_index/topnavigation.dart';
-import 'package:myapp/pages/login.dart';
-import 'package:myapp/widgets/page_content.dart';
+import 'package:kuangchang_app/pages/home/tab_index/topnavigation.dart';
+import 'package:kuangchang_app/pages/login.dart';
+import 'package:kuangchang_app/widgets/page_content.dart';
 
 import '../deal_manage/index.dart';
 //4个tab内容区

@@ -26,76 +26,56 @@ packages:
     dependency: transitive
     description:
       name: async
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
     source: hosted
     version: "2.9.0"
   boolean_selector:
     dependency: transitive
     description:
       name: boolean_selector
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
     source: hosted
     version: "2.1.0"
   cached_network_image:
     dependency: "direct main"
     description:
       name: cached_network_image
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
-    version: "3.2.2"
+    version: "3.2.3"
   cached_network_image_platform_interface:
     dependency: transitive
     description:
       name: cached_network_image_platform_interface
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "2.0.0"
   cached_network_image_web:
     dependency: transitive
     description:
       name: cached_network_image_web
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "1.0.2"
   characters:
     dependency: transitive
     description:
       name: characters
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
     source: hosted
     version: "1.2.1"
   clock:
     dependency: transitive
     description:
       name: clock
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
     source: hosted
     version: "1.1.1"
   collection:
     dependency: transitive
     description:
       name: collection
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
     source: hosted
     version: "1.16.0"
   convert:
@@ -105,26 +85,25 @@ packages:
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "3.1.1"
+  cross_file:
+    dependency: transitive
+    description:
+      name: cross_file
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
+    source: hosted
+    version: "0.3.3+2"
   crypto:
     dependency: transitive
     description:
       name: crypto
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
     source: hosted
     version: "3.0.2"
   cupertino_icons:
     dependency: "direct main"
     description:
       name: cupertino_icons
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
     source: hosted
     version: "1.0.5"
   dart_style:
@@ -138,28 +117,20 @@ packages:
     dependency: transitive
     description:
       name: fake_async
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
     source: hosted
     version: "1.3.1"
-<<<<<<< HEAD
-=======
   ffi:
     dependency: transitive
     description:
       name: ffi
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "2.0.1"
->>>>>>> 24eee7f8fd70f6d62879db305b7f1a041eba2232
   file:
     dependency: transitive
     description:
       name: file
-<<<<<<< HEAD
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "6.1.4"
@@ -170,11 +141,13 @@ packages:
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "1.0.1"
-=======
-      url: "https://pub.flutter-io.cn"
+  fluro:
+    dependency: "direct main"
+    description:
+      name: fluro
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
-    version: "6.1.4"
->>>>>>> 24eee7f8fd70f6d62879db305b7f1a041eba2232
+    version: "2.0.4"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -184,33 +157,47 @@ packages:
     dependency: transitive
     description:
       name: flutter_blurhash
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "0.7.0"
   flutter_cache_manager:
     dependency: transitive
     description:
       name: flutter_cache_manager
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "3.3.0"
   flutter_lints:
     dependency: "direct dev"
     description:
       name: flutter_lints
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
     source: hosted
     version: "2.0.1"
+  flutter_plugin_android_lifecycle:
+    dependency: transitive
+    description:
+      name: flutter_plugin_android_lifecycle
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
+    source: hosted
+    version: "2.0.7"
+  flutter_swiper_null_safety:
+    dependency: "direct main"
+    description:
+      name: flutter_swiper_null_safety
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
+    source: hosted
+    version: "1.0.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
-<<<<<<< HEAD
+  flutter_web_plugins:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   glob:
     dependency: transitive
     description:
@@ -218,41 +205,73 @@ packages:
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "2.1.1"
-=======
-<<<<<<< HEAD
+  gzx_dropdown_menu:
+    dependency: "direct main"
+    description:
+      name: gzx_dropdown_menu
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
+    source: hosted
+    version: "3.1.0"
   http:
     dependency: transitive
     description:
       name: http
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "0.13.5"
   http_parser:
     dependency: transitive
     description:
       name: http_parser
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "4.0.2"
-=======
->>>>>>> 24eee7f8fd70f6d62879db305b7f1a041eba2232
+  image_picker:
+    dependency: "direct main"
+    description:
+      name: image_picker
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
+    source: hosted
+    version: "0.8.6"
+  image_picker_android:
+    dependency: transitive
+    description:
+      name: image_picker_android
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
+    source: hosted
+    version: "0.8.5+3"
+  image_picker_for_web:
+    dependency: transitive
+    description:
+      name: image_picker_for_web
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
+    source: hosted
+    version: "2.1.10"
+  image_picker_ios:
+    dependency: transitive
+    description:
+      name: image_picker_ios
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
+    source: hosted
+    version: "0.8.6+1"
+  image_picker_platform_interface:
+    dependency: transitive
+    description:
+      name: image_picker_platform_interface
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
+    source: hosted
+    version: "2.6.2"
   js:
     dependency: transitive
     description:
       name: js
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
-    version: "0.6.5"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
+    version: "0.6.4"
   lints:
     dependency: transitive
     description:
       name: lints
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.0.1"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "2.0.1"
@@ -263,41 +282,34 @@ packages:
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "1.1.0"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
   matcher:
     dependency: transitive
     description:
       name: matcher
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
     source: hosted
     version: "0.12.12"
   material_color_utilities:
     dependency: transitive
     description:
       name: material_color_utilities
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
     source: hosted
     version: "0.1.5"
   meta:
     dependency: transitive
     description:
       name: meta
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
     source: hosted
     version: "1.8.0"
-<<<<<<< HEAD
+  octo_image:
+    dependency: transitive
+    description:
+      name: octo_image
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
+    source: hosted
+    version: "1.0.2"
   package_config:
     dependency: transitive
     description:
@@ -305,111 +317,90 @@ packages:
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "2.1.0"
-=======
-  octo_image:
-    dependency: transitive
-    description:
-      name: octo_image
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.0.2"
->>>>>>> 24eee7f8fd70f6d62879db305b7f1a041eba2232
   path:
     dependency: transitive
     description:
       name: path
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "1.8.2"
   path_provider:
     dependency: transitive
     description:
       name: path_provider
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "2.0.11"
   path_provider_android:
     dependency: transitive
     description:
       name: path_provider_android
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
-    version: "2.0.21"
+    version: "2.0.22"
   path_provider_ios:
     dependency: transitive
     description:
       name: path_provider_ios
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "2.0.11"
   path_provider_linux:
     dependency: transitive
     description:
       name: path_provider_linux
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "2.1.7"
   path_provider_macos:
     dependency: transitive
     description:
       name: path_provider_macos
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "2.0.6"
   path_provider_platform_interface:
     dependency: transitive
     description:
       name: path_provider_platform_interface
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "2.0.5"
   path_provider_windows:
     dependency: transitive
     description:
       name: path_provider_windows
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "2.1.3"
   pedantic:
     dependency: transitive
     description:
       name: pedantic
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "1.11.1"
   platform:
     dependency: transitive
     description:
       name: platform
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "3.1.0"
   plugin_platform_interface:
     dependency: transitive
     description:
       name: plugin_platform_interface
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "2.1.3"
   process:
     dependency: transitive
     description:
       name: process
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "4.2.4"
-  rxdart:
-    dependency: transitive
-    description:
-      name: rxdart
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.27.7"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
-    version: "1.8.2"
+    version: "4.2.4"
   protobuf:
     dependency: "direct main"
     description:
@@ -431,6 +422,13 @@ packages:
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "2.1.3"
+  rxdart:
+    dependency: transitive
+    description:
+      name: rxdart
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
+    source: hosted
+    version: "0.27.7"
   shake_animation_widget:
     dependency: "direct main"
     description:
@@ -438,7 +436,6 @@ packages:
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "3.0.3"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
   sky_engine:
     dependency: transitive
     description: flutter
@@ -462,135 +459,83 @@ packages:
     dependency: transitive
     description:
       name: source_span
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
     source: hosted
     version: "1.9.0"
   sqflite:
     dependency: transitive
     description:
       name: sqflite
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "2.2.0+3"
   sqflite_common:
     dependency: transitive
     description:
       name: sqflite_common
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "2.4.0+2"
   stack_trace:
     dependency: transitive
     description:
       name: stack_trace
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
     source: hosted
     version: "1.10.0"
   stream_channel:
     dependency: transitive
     description:
       name: stream_channel
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
     source: hosted
     version: "2.1.0"
   string_scanner:
     dependency: transitive
     description:
       name: string_scanner
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
     source: hosted
     version: "1.1.1"
   synchronized:
     dependency: transitive
     description:
       name: synchronized
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "3.0.0+3"
   term_glyph:
     dependency: transitive
     description:
       name: term_glyph
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
     source: hosted
     version: "1.2.1"
   test_api:
     dependency: transitive
     description:
       name: test_api
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
     source: hosted
     version: "0.4.12"
   typed_data:
     dependency: transitive
     description:
       name: typed_data
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "1.3.1"
   uuid:
     dependency: transitive
     description:
       name: uuid
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "3.0.7"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
-    version: "1.3.1"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
+    version: "3.0.7"
   vector_math:
     dependency: transitive
     description:
       name: vector_math
-<<<<<<< HEAD
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.1.2"
-  win32:
-    dependency: transitive
-    description:
-      name: win32
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "3.1.1"
-  xdg_directories:
-    dependency: transitive
-    description:
-      name: xdg_directories
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.2.0+2"
-sdks:
-  dart: ">=2.18.1 <3.0.0"
-  flutter: ">=3.3.0"
-=======
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "2.1.2"
@@ -608,6 +553,20 @@ sdks:
       url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
     source: hosted
     version: "2.2.0"
+  win32:
+    dependency: transitive
+    description:
+      name: win32
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
+    source: hosted
+    version: "3.1.2"
+  xdg_directories:
+    dependency: transitive
+    description:
+      name: xdg_directories
+      url: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"
+    source: hosted
+    version: "0.2.0+2"
   yaml:
     dependency: transitive
     description:
@@ -617,5 +576,4 @@ sdks:
     version: "3.1.1"
 sdks:
   dart: ">=2.18.1 <3.0.0"
-  flutter: ">=2.5.0"
->>>>>>> 6bc1d63a0c38a21752fff1013a343a0681156c07
+  flutter: ">=3.3.0"

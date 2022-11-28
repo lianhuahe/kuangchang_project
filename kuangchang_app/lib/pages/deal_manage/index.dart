@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/home/tab_index/info/item_widget.dart';
-import 'package:myapp/pages/home/tab_index/info/data.dart';
-import 'package:myapp/widgets/common_floating_action_button.dart';
+import 'package:kuangchang_app/pages/home/tab_index/info/item_widget.dart';
+import 'package:kuangchang_app/pages/home/tab_index/info/data.dart';
+import 'package:kuangchang_app/widgets/common_floating_action_button.dart';
 class DealManagePage extends StatelessWidget {
   final List<InfoItem> datalist;
   const DealManagePage({Key? key, this.datalist= infoData}) : super(key: key);

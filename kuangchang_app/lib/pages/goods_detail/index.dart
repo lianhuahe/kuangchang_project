@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/goods_detail/data.dart';
-import 'package:myapp/widgets/CommonTitle.dart';
-import 'package:myapp/widgets/common_swiper.dart';
+import 'package:kuangchang_app/pages/goods_detail/data.dart';
+import 'package:kuangchang_app/widgets/CommonTitle.dart';
+import 'package:kuangchang_app/widgets/common_swiper.dart';
 
 class GoodsDetailPage extends StatefulWidget {
   const GoodsDetailPage({Key? key}) : super(key: key);

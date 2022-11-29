@@ -12,6 +12,7 @@ import 'user_msg.dart';
 import 'package:flutter/material.dart';
 import 'package:kuangchang_app/user_msg.dart';
 import 'protofile/loginproto/login.pb.dart';
+import 'protofile/registerproto/register.pb.dart';
 /// WebSocket地址
 const String _SOCKET_URL = "ws://123.249.9.132:443/ping";
 
@@ -201,6 +202,25 @@ void  Login(Uint8List msg) async
   heartbeat();
 }
 
+void  Register(Uint8List msg) async
+{
+  socket = await Socket.connect('123.249.9.132', 443);
+  print('try to connect...');
+
+  // listen to the received data event stream
+  socket?.listen((List<int> reply) {
+    msghandle(reply);
+  });
+  // send hello
+  socket?.add(msg);
+  heartbeat();
+}
+
+void SendRequest(Uint8List msg) async
+{
+  socket?.add(msg);
+}
+
 void heartbeat() async
 {
   /*await Future.delayed(Duration(seconds: 5));
@@ -221,10 +241,11 @@ msghandle(List<int> reply)
   print(handlereply);
   if(s1==97&&s2==97){
     var msg=user_login_reply.fromBuffer(handlereply);
-    return LoginHandle(msg);
+    LoginHandle(msg);
   }
   else if(s1==97&&s2==98){
-    //return RegisterHandle(msg);
+    var msg=user_register_reply.fromBuffer(handlereply);
+    RegisterHandle(msg);
   }
 }
 
@@ -264,9 +285,9 @@ LoginHandle(user_login_reply msg)
   //return "";
 }
 
-RegisterHandle(msg)
+RegisterHandle(user_register_reply msg)
 {
-  if(msg[16]=="Y")
+  if(msg.issuccess)
   {
     print("register success");
     //跳转主界面
@@ -274,7 +295,7 @@ RegisterHandle(msg)
   }
   else
   {
-    print("login failed");
+    print("register failed");
     //失败弹窗,账号已存在
     AlertDialog(
       title: const Text("提示"),

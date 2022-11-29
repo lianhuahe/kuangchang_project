@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:shake_animation_widget/shake_animation_widget.dart';
+import '../../protofile/registerproto/register.pb.dart';
+import '../../server_connection.dart';
+import '../../user_msg.dart';
 
 //用户名输入框的焦点控制
 FocusNode _AccountFocusNode = new FocusNode();
@@ -93,12 +96,23 @@ class _RegisterPageState extends State<RegisterPage> {
                       child: ElevatedButton(
                         child: Text("登录"),
                         onPressed: () {
-                          Get.offNamed('/home');
                           //checkUserName();
                           //checkUserPassword();
+                          var request=user_register_request.create();
+                          request.name=_userNameController.text;
+                          request.accout=_AccountController.text;
+                          request.password=_passwordController.text;
+                          var msg=request.writeToBuffer();
+                          Uint8List registerrequest=new Uint8List(msg.length+2);
+                          registerrequest[0]=97;
+                          registerrequest[1]=98;
+                          for(int i=0;i<msg.length;i++)
+                            registerrequest[i+2]=msg[i];
+                          Register(registerrequest);
+                          UserMsg.UserAccount=_userNameController.text;
                           //checkLoginFunction();点击登录验证密码正确函数，还没有完成。
-                          //String userName = _userNameController.text;
-                          // String userPassrowe = _passwordController.text;
+                          //String userName =
+                          // String userPassrowe =
                         },
                       ),
                     ),

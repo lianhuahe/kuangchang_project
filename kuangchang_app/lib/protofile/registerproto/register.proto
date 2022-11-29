@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package register_proto;
+
+message user_register_request
+{
+  string accout=1;
+  string password=2;
+  string name=3;
+}
+
+message user_register_reply
+{
+  bool issuccess=1;
+}

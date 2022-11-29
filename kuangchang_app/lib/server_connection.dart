@@ -267,19 +267,14 @@ LoginHandle(user_login_reply msg)
   {
     print("login failed");
     //失败弹窗
-    AlertDialog(
-      title: const Text("提示"),
-      content: const Text("登录失败"),
-      actions: [
-        TextButton(
-          onPressed: () {
-            Get.back();
-          },
-          child: const Text(''),
-        ),
-        TextButton(onPressed: () {}, child: const Text("确定")),
-      ],
+    Get.defaultDialog(
+        title: "提示",
+        titlePadding: EdgeInsets.all(10),
+        titleStyle: TextStyle(color: Colors.red),
+        middleText: "登录失败",
+        middleTextStyle: TextStyle(color: Colors.blue)
     );
+
 
   }
   //return "";
@@ -291,24 +286,18 @@ RegisterHandle(user_register_reply msg)
   {
     print("register success");
     //跳转主界面
-    Get.toNamed('/home');
+    Get.offNamed('/home');
   }
   else
   {
     print("register failed");
     //失败弹窗,账号已存在
-    AlertDialog(
-      title: const Text("提示"),
-      content: const Text("账号已存在"),
-      actions: [
-        TextButton(
-          onPressed: () {
-            Get.back();
-          },
-          child: const Text(''),
-        ),
-        TextButton(onPressed: () {}, child: const Text("确定")),
-      ],
+    Get.defaultDialog(
+        title: "提示",
+        titlePadding: EdgeInsets.all(10),
+        titleStyle: TextStyle(color: Colors.red),
+        middleText: "账号已存在",
+        middleTextStyle: TextStyle(color: Colors.blue)
     );
   }
   //return "";

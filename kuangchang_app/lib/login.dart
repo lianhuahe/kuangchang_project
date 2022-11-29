@@ -150,7 +150,7 @@ StreamBuilder<String> buildUserNameWidget() {
                 InputDecoration(
                   //红色的错误提示文本
                   errorText: snapshot.data,
-                  labelText: "用户名",
+                  labelText: "账号",
                   //设置上下左右 都有边框
                   //设置四个角的弧度
                   border: OutlineInputBorder(
@@ -159,7 +159,8 @@ StreamBuilder<String> buildUserNameWidget() {
                   ),
                 )
 
-            ));
+            )
+        );
       });
 }
 

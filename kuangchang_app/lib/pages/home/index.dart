@@ -4,6 +4,7 @@ import 'package:kuangchang_app/pages/login.dart';
 
 import '../deal_manage/index.dart';
 import '../news/news_page.dart';
+import 'tab_profile/index.dart';
 //4个tab内容区
 List<Widget> tabViewList=
 [
@@ -33,7 +34,7 @@ class _HomePageState extends State<HomePage> {
   static const List<Widget> _widgetOptions = <Widget>[
     TopnavigationPage(),
     NewsPage(),
-    DealManagePage(),
+    TabProfilePage(),
   ];
 
   void _onItemTapped(int index) {

@@ -3,7 +3,6 @@ import 'package:fluro/fluro.dart';
 import 'package:kuangchang_app/pages/home/tab_index/topnavigation.dart';
 import 'package:kuangchang_app/pages/login.dart';
 import 'package:kuangchang_app/pages/reward_add/index.dart';
-import 'package:kuangchang_app/widgets/page_content.dart';
 import 'pages/home/index.dart';
 
 import 'pages/not_found.dart';

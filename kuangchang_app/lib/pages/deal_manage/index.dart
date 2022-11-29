@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:kuangchang_app/pages/home/tab_index/info/item_widget.dart';
 import 'package:kuangchang_app/pages/home/tab_index/info/data.dart';
 import 'package:kuangchang_app/widgets/common_floating_action_button.dart';
@@ -14,7 +15,7 @@ class DealManagePage extends StatelessWidget {
         child:Scaffold(
           resizeToAvoidBottomInset: false,
           floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-          floatingActionButton: CommonFloatingActionButton(title: '发布悬赏', onTap: (){Navigator.pushNamed(context,'rewardAdd');}),
+          floatingActionButton: CommonFloatingActionButton(title: '发布悬赏', onTap: (){Get.toNamed('rewardAdd');}),
           appBar: AppBar(
             centerTitle: true,
             title: Text('交易管理',),

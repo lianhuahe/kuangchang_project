@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kuangchang_app/pages/home/tab_index/topnavigation.dart';
 import 'package:kuangchang_app/pages/login.dart';
-import 'package:kuangchang_app/widgets/page_content.dart';
 
 import '../deal_manage/index.dart';
+import '../news/news_page.dart';
 //4个tab内容区
 List<Widget> tabViewList=
 [
@@ -32,10 +32,7 @@ class _HomePageState extends State<HomePage> {
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     TopnavigationPage(),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
+    NewsPage(),
     DealManagePage(),
   ];
 

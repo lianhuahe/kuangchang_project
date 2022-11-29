@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../routes.dart';
 
 
 class PageContent extends StatelessWidget {
@@ -18,32 +18,32 @@ class PageContent extends StatelessWidget {
       body: ListView(
         children: [
           ElevatedButton(
-              onPressed: (){Navigator.pushNamed(context,Routes.home);},
-              child: Text(Routes.home),
+              onPressed: (){Get.toNamed("/home");},
+              child: Text('home'),
           ),
 
           ElevatedButton(
-            onPressed: (){Navigator.pushNamed(context,'/login');},
-            child: Text(Routes.login),
+            onPressed: (){Get.toNamed('/login');},
+            child: Text('login'),
           ),
 
           ElevatedButton(
-            onPressed: (){Navigator.pushNamed(context,'/awdqwar');},
+            onPressed: (){Get.toNamed('/awdqwar');},
             child: Text('不存在页面'),
           ),
 
           ElevatedButton(
-            onPressed: (){Navigator.pushNamed(context,'/room/2222');},
+            onPressed: (){Get.toNamed('/room/2222');},
             child: Text('物品详情'),
           ),
 
           ElevatedButton(
-            onPressed: (){Navigator.pushNamed(context,'/register');},
-            child: Text(Routes.register),
+            onPressed: (){Get.toNamed('/register');},
+            child: Text('register'),
           ),
 
           ElevatedButton(
-            onPressed: (){Navigator.pushNamed(context,'/topnavigation');},
+            onPressed: (){Get.toNamed('/topnavigation');},
             child: Text('topnavigation'),
           )
         ],

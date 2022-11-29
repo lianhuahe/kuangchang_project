@@ -1,18 +1,29 @@
-import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'routes.dart';
+import 'package:get/get.dart';
+import 'package:kuangchang_app/pages/news/news_page.dart';
+import 'package:kuangchang_app/pages/reward_add/index.dart';
+import 'pages/goods_detail/index.dart';
+import 'pages/home/tab_index/topnavigation.dart';
+import 'pages/register.dart';
+import 'pages/login.dart';
+import 'pages/home/index.dart';
 
 class Application extends StatelessWidget {
   const Application({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final router = FluroRouter(); // 定义路由
-    Routes.configureRoutes(router); //用 configureRoutes 配置路由
-
-    return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.blue),
-      onGenerateRoute: router.generator, // 把 router 关联到 MaterialApp
+    return  GetMaterialApp(
+      initialRoute: '/',
+      getPages: [
+        GetPage(name: '/', page: () => LoginPage()),
+        GetPage(name: '/home', page: () => HomePage(),),
+        GetPage(name: '/register', page: () => RegisterPage(),),
+        GetPage(name: '/topnavigation', page: () => TopnavigationPage(),),
+        GetPage(name: '/rewardAdd', page: () => RewardAddPage(),),
+        GetPage(name: '/goodsDetail/:goodsId', page: () =>GoodsDetailPage(),),
+        GetPage(name: '/news', page: () => NewsPage(),),
+      ],
     );
   }
 }

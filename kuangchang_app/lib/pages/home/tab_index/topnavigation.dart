@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:kuangchang_app/pages/home/tab_index/info/dealindex.dart';
 import 'package:kuangchang_app/widgets/search_bar/index.dart';
-import 'package:kuangchang_app/routes.dart';
-import 'info/filtrate_synthesize.dart';
 
 
 
@@ -24,7 +23,7 @@ class TopnavigationPage extends StatelessWidget {
               automaticallyImplyLeading: true,
               title: SearchBar(
                   onCancel: true,
-                onSearch: (){Navigator.pushNamed(context,'/awdqwar');},
+                onSearch: (){Get.toNamed('/awdqwar');},
               ),
               backgroundColor: Colors.white,
 

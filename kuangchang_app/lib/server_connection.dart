@@ -6,6 +6,8 @@ import 'dart:io';
 import 'dart:convert';
 import 'dart:async';
 import 'dart:typed_data';
+import 'package:get/get.dart';
+
 import 'user_msg.dart';
 import 'package:flutter/material.dart';
 import 'package:kuangchang_app/user_msg.dart';
@@ -238,11 +240,26 @@ LoginHandle(user_login_reply msg)
     print(UserMsg.UserName);
     print(UserMsg.UserId);
     //跳转主界面
+    Get.toNamed('/home');
   }
   else
   {
     print("login failed");
     //失败弹窗
+    AlertDialog(
+      title: const Text("提示"),
+      content: const Text("登录失败"),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Get.back();
+          },
+          child: const Text(''),
+        ),
+        TextButton(onPressed: () {}, child: const Text("确定")),
+      ],
+    );
+
   }
   //return "";
 }
@@ -253,11 +270,25 @@ RegisterHandle(msg)
   {
     print("register success");
     //跳转主界面
+    Get.toNamed('/home');
   }
   else
   {
     print("login failed");
     //失败弹窗,账号已存在
+    AlertDialog(
+      title: const Text("提示"),
+      content: const Text("账号已存在"),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Get.back();
+          },
+          child: const Text(''),
+        ),
+        TextButton(onPressed: () {}, child: const Text("确定")),
+      ],
+    );
   }
   //return "";
 }

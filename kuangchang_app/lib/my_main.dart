@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kuangchang_app/news/news_page.dart';
-import './chat/chat_page.dart';
+
+import 'pages/news/news_page.dart';
+
 
 void main() => runApp(MyApp());//入口函数，MyApp()在runApp里面运行
 //这部分代码基本是不变的

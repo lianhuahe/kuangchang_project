@@ -27,6 +27,7 @@ dependencies:
   protoc_plugin: ^20.0.1
   protobuf: ^2.1.0
   fixnum: ^1.0.1
+  get: ^4.6.5
 
 dev_dependencies:
   flutter_test:

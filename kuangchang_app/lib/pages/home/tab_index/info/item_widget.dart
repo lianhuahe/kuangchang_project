@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'data.dart';
 import 'starmark.dart';
@@ -11,7 +12,7 @@ class ItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.pushNamed(context,'/goodsDetail/${data?.id}');
+        Get.toNamed('/goodsDetail/${data?.id}');
       },
       child: Container(
           padding: EdgeInsets.all(5),

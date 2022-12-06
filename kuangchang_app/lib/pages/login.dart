@@ -98,7 +98,8 @@ class _LoginPageState extends State<LoginPage> {
                 TextButton(
                   // 一个注册按钮
                     onPressed: () {
-                      Get.offNamed('/register');
+                      Get.toNamed('/register');
+                      print('login');
                       //跳转到注册界面
                     },
                     child: Text('去注册~~'))
@@ -136,27 +137,20 @@ StreamBuilder<String> buildUserNameWidget() {
             isForward: false,
             //抖动控制器
             shakeAnimationController: _userNameAnimation,
-            child:  TextField(
+            child: new TextField(
               //焦点控制
               focusNode: _userNameFocusNode,
               //文本控制器
               controller: _userNameController,
               //键盘回车键点击回调
-              onSubmitted: (String value) {
-                //点击校验，如果有内容输入 输入焦点跳入下一个输入框
-                if (checkUserName()) {
-              _userNameFocusNode.unfocus();
-              FocusScope.of(context).requestFocus(_passwordFocusNode);
-            } else {
-              FocusScope.of(context).requestFocus(_userNameFocusNode);
-            }
-          },
                 //边框样式设置
                 decoration:
                 InputDecoration(
                   //红色的错误提示文本
                   errorText: snapshot.data,
-                  labelText: "用户名",
+                  labelText: "账号",
+                  hintText: '请输入6~26个字母，数字，下划线组成的账号',
+                  hintStyle: TextStyle(fontSize: 14.0),
                   //设置上下左右 都有边框
                   //设置四个角的弧度
                   border: OutlineInputBorder(
@@ -184,13 +178,6 @@ StreamBuilder<String> buildUserPasswordWidget() {
         child: new TextField(
           focusNode: _passwordFocusNode,
           controller: _passwordController,
-          onSubmitted: (String value) {
-            if (checkUserPassword()) {
-              //loginFunction();
-            } else {
-              FocusScope.of(context).requestFocus(_passwordFocusNode);
-            }
-          },
           //隐藏输入的文本
           obscureText: true,
           //最大可输入1行
@@ -198,6 +185,8 @@ StreamBuilder<String> buildUserPasswordWidget() {
           //边框样式设置
           decoration: InputDecoration(
             labelText: "密码",
+            hintText: '请输入6~26个字母，数字，下划线组成的密码',
+            hintStyle: TextStyle(fontSize: 14.0),
             errorText: snapshot.data,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -213,27 +202,49 @@ StreamBuilder<String> buildUserPasswordWidget() {
 bool checkUserName() {
   //获取输入框中的输入文本
   String userName = _userNameController.text;
-  if (userName.length == 0) {
+  if (userName.length < 6||userName.length > 26) {
     //Stream 事件流更新提示文案
-    _userNameStream.add("请输入用户名");
+    _userNameStream.add("账号长度应在6到26之间");
     //抖动动画开启
     _userNameAnimation.start();
     return false;
-  } else {
+  }
+  else if (userName.contains(new RegExp(r'[^\w]'))) {
+    //Stream 事件流更新提示文案
+    _userNameStream.add("请输入规范账号");
+    //抖动动画开启
+    _userNameAnimation.start();
+    return false;
+  }
+
+  else {
     //清除错误提示
-    _userNameStream.add("");
+    //_userNameStream.add("");
     return true;
   }
 }
 
 bool checkUserPassword() {
   String userPassrowe = _passwordController.text;
-  if (userPassrowe.length < 6) {
-    _userPasswordStream.add("请输入标准密码");
+  if (userPassrowe.length < 6||userPassrowe.length > 26) {
+    //Stream 事件流更新提示文案
+    _userPasswordStream.add("密码长度应在6到26之间");
+    //抖动动画开启
     _userPasswordAnimation.start();
     return false;
-  } else {
-    _userPasswordStream.add("");
+  }
+  else if (userPassrowe.contains(new RegExp(r'[^\w]'))) {
+    //Stream 事件流更新提示文案
+    _userPasswordStream.add("请输入规范密码");
+    //抖动动画开启
+    _userPasswordAnimation.start();
+    return false;
+  }
+
+  else {
+    //清除错误提示
+    //_userPasswordStream.add("");
     return true;
   }
+
 }

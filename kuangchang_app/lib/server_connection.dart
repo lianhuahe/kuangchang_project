@@ -188,6 +188,7 @@ void dispose() {
 
 
 Socket ?socket;
+
 void  Login(Uint8List msg) async
 {
   socket = await Socket.connect('123.249.9.132', 443);
@@ -197,9 +198,8 @@ void  Login(Uint8List msg) async
   socket?.listen((List<int> reply) {
     msghandle(reply);
   });
-  // send hello
+  print(msg);
   socket?.add(msg);
-  heartbeat();
 }
 
 void  Register(Uint8List msg) async
@@ -211,9 +211,8 @@ void  Register(Uint8List msg) async
   socket?.listen((List<int> reply) {
     msghandle(reply);
   });
-  // send hello
-  socket?.add(msg);
   heartbeat();
+  socket?.add(msg);
 }
 
 void SendRequest(Uint8List msg) async
@@ -246,6 +245,9 @@ msghandle(List<int> reply)
   else if(s1==97&&s2==98){
     var msg=user_register_reply.fromBuffer(handlereply);
     RegisterHandle(msg);
+  }
+  else if(s1==122&&s2==122){
+    ConnectionInterruptedHandle();
   }
 }
 
@@ -313,4 +315,6 @@ RegisterHandle(user_register_reply msg)
   }
   //return "";
 }
-
+ConnectionInterruptedHandle(){
+  //连接中断弹窗，附带两个按钮，一个是尝试重新连接（reconnect），一个是取消（exit），退出到登录界面
+}

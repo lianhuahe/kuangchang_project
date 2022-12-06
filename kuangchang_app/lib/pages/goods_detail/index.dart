@@ -16,6 +16,7 @@ class _GoodsDetailPageState extends State<GoodsDetailPage> {
   @override
   void initState() {
     setState(() {
+
       data = defaultData;
     });
     // TODO: implement initState

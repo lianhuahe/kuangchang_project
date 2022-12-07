@@ -306,4 +306,5 @@ RegisterHandle(user_register_reply msg)
 }
 ConnectionInterruptedHandle(){
   //连接中断弹窗，附带两个按钮，一个是尝试重新连接（reconnect），一个是取消（exit），退出到登录界面
+
 }

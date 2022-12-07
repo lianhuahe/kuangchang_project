@@ -1,20 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:kuangchang_app/pages/home/tab_index/topnavigation.dart';
-import 'package:kuangchang_app/pages/login.dart';
 
-import '../deal_manage/index.dart';
+
 import '../news/news_page.dart';
 import 'tab_profile/index.dart';
-//4个tab内容区
-List<Widget> tabViewList=
-[
-  TopnavigationPage(),
-  LoginPage()
-];
-//四个软件底下导航栏tab
+//三个软件底下导航栏tab
 List <BottomNavigationBarItem> barItemList=[
   BottomNavigationBarItem( icon: Icon(Icons.home), label: '主页',),
-  BottomNavigationBarItem( icon: Icon(Icons.search), label: '搜索',),
   BottomNavigationBarItem( icon: Icon(Icons.view_headline), label: '产品',),
   BottomNavigationBarItem( icon: Icon(Icons.account_circle), label: '我的',)
 ];
@@ -29,8 +21,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     TopnavigationPage(),
     NewsPage(),
@@ -54,15 +44,15 @@ class _HomePageState extends State<HomePage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: '主页',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            icon: Icon(Icons.view_headline),
+            label: '聊天',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            icon: Icon(Icons.account_circle),
+            label: '我的',
           ),
         ],
         currentIndex: _selectedIndex,

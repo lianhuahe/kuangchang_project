@@ -22,12 +22,13 @@ class DealInfoPage extends StatelessWidget {
       child: CustomScrollView(slivers: <Widget>[
 
         // 放置一个固定的顶部的标题栏
-        SliverPersistentHeader(
+        /*SliverPersistentHeader(
         pinned: true,
         delegate: _SliverAppBarDelegate(
             maxHeight: 30,
             minHeight: 30,
-            child: Container(
+            child:
+            Container(
               color: Colors.white,
               padding: EdgeInsets.all(5),
               height: 30,
@@ -65,8 +66,9 @@ class DealInfoPage extends StatelessWidget {
                   ),
                 ],
               ),
-            )),
-      ),
+            )
+        ),
+      ),*/
 
 
 

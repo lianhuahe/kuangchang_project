@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kuangchang_app/pages/home/tab_index/info/dealindex.dart';
+import 'package:kuangchang_app/widgets/head_portrait.dart';
 import 'package:kuangchang_app/widgets/search_bar/index.dart';
 
 
@@ -18,12 +19,13 @@ class TopnavigationPage extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
+              leading: HeadImage(),
               primary: true,//是否设置内容避开状态栏
               elevation: 2,//设置标题栏下面阴影的高度
               automaticallyImplyLeading: true,
               title: SearchBar(
                   onCancel: true,
-                onSearch: (){Get.toNamed('/awdqwar');},
+                onSearch: (){Get.toNamed('/notfound');},
               ),
               backgroundColor: Colors.white,
 

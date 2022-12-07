@@ -15,7 +15,6 @@ class GoodsDetailData{
       );
 }
 
-
 var defaultData = GoodsDetailData(
   id: '1',
   title: 'coffee',

@@ -8,6 +8,8 @@ class TabProfilePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('我的'),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
       ),
     );
   }

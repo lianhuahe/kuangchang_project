@@ -74,19 +74,30 @@ class _LoginPageState extends State<LoginPage> {
               child: ElevatedButton(
                 child: Text("登录"),
                 onPressed: () {
-                  checkUserName();
-                  checkUserPassword();
-                  user_login_request request=user_login_request.create();
-                  request.account=_userNameController.text;
-                  request.password=_passwordController.text;
-                  var msg=request.writeToBuffer();
-                  Uint8List loginrequest=new Uint8List(msg.length+2);
-                  loginrequest[0]=97;
-                  loginrequest[1]=97;
-                  for(int i=0;i<msg.length;i++)
-                    loginrequest[i+2]=msg[i];
-                  Login(loginrequest);
-                  UserMsg.UserAccount=_userNameController.text;
+
+                       if(checkUserName()&&checkUserPassword())
+                         {
+                            user_login_request request=user_login_request.create();
+                            request.account=_userNameController.text;
+                            request.password=_passwordController.text;
+                            var msg=request.writeToBuffer();
+                            Uint8List loginrequest=new Uint8List(msg.length+2);
+                            loginrequest[0]=97;
+                            loginrequest[1]=97;
+                            for(int i=0;i<msg.length;i++)
+                              loginrequest[i+2]=msg[i];
+                            Login(loginrequest);
+                            UserMsg.UserAccount=_userNameController.text;
+                              }
+                       else{
+                         Get.defaultDialog(
+                             title: "提示",
+                             titlePadding: EdgeInsets.all(10),
+                             titleStyle: TextStyle(color: Colors.red),
+                             middleText: "登录失败",
+                             middleTextStyle: TextStyle(color: Colors.blue)
+                         );
+                       }
                 },
               ),
             ),
@@ -203,6 +214,7 @@ bool checkUserName() {
   //获取输入框中的输入文本
   String userName = _userNameController.text;
   if (userName.length < 6||userName.length > 26) {
+    if(userName=='admin') return true;
     //Stream 事件流更新提示文案
     _userNameStream.add("账号长度应在6到26之间");
     //抖动动画开启

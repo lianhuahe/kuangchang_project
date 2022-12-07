@@ -98,11 +98,8 @@ class _RegisterPageState extends State<RegisterPage> {
                       child: ElevatedButton(
                         child: Text("注册"),
                         onPressed: () {
-                          checkAccount();
-                          checkUserName();
-                          checkUserPassword();
-                          checkaffirmPassword();
-                          var request=user_register_request.create();
+                          if(checkAccount()&&checkUserName()&&checkUserPassword()&&checkaffirmPassword())
+                         { var request=user_register_request.create();
                           request.name=_userNameController.text;
                           request.accout=_AccountController.text;
                           request.password=_passwordController.text;
@@ -113,7 +110,16 @@ class _RegisterPageState extends State<RegisterPage> {
                           for(int i=0;i<msg.length;i++)
                             registerrequest[i+2]=msg[i];
                           Register(registerrequest);
-                          UserMsg.UserAccount=_userNameController.text;
+                          UserMsg.UserAccount=_userNameController.text;}
+                          else{
+                            Get.defaultDialog(
+                                title: "提示",
+                                titlePadding: EdgeInsets.all(10),
+                                titleStyle: TextStyle(color: Colors.red),
+                                middleText: "注册失败",
+                                middleTextStyle: TextStyle(color: Colors.blue)
+                            );
+                          }
                           //checkLoginFunction();点击登录验证密码正确函数，还没有完成。
                           //String userName =
                           // String userPassrowe =

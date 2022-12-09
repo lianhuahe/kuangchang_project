@@ -81,6 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                             request.account=_userNameController.text;
                             request.password=_passwordController.text;
                             var msg=request.writeToBuffer();
+                            print(msg);
                             Login(msg);
                             UserMsg.UserAccount=_userNameController.text;
                               }

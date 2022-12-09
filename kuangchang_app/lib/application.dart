@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kuangchang_app/pages/news/news_page.dart';
 import 'package:kuangchang_app/pages/reward_add/index.dart';
+import 'package:kuangchang_app/pages/reward_manage/index.dart';
+import 'Trade_manage/index.dart';
+import 'order_manage/index.dart';
 import 'pages/goods_detail/index.dart';
 import 'pages/home/tab_index/topnavigation.dart';
 import 'pages/register.dart';
@@ -23,6 +26,9 @@ class Application extends StatelessWidget {
         GetPage(name: '/rewardAdd', page: () => RewardAddPage(),),
         GetPage(name: '/goodsDetail/:goodsId', page: () =>GoodsDetailPage(),),
         GetPage(name: '/news', page: () => NewsPage(),),
+        GetPage(name: '/rewardManage', page: () => RewardManagePage(),),
+        GetPage(name: '/tradeManage', page: () => TradeManagePage(),),
+        GetPage(name: '/orderManage', page: () => OrderManagePage(),),
       ],
     );
   }

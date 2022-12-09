@@ -81,12 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                             request.account=_userNameController.text;
                             request.password=_passwordController.text;
                             var msg=request.writeToBuffer();
-                            Uint8List loginrequest=new Uint8List(msg.length+2);
-                            loginrequest[0]=97;
-                            loginrequest[1]=97;
-                            for(int i=0;i<msg.length;i++)
-                              loginrequest[i+2]=msg[i];
-                            Login(loginrequest);
+                            Login(msg);
                             UserMsg.UserAccount=_userNameController.text;
                               }
                        else{

@@ -3,16 +3,18 @@ import 'package:web_socket_channel/io.dart';
 import 'package:socket_io_client/socket_io_client.dart';
 import 'package:socket_io_client/socket_io_client.dart' as IO;*/
 import 'dart:io';
+import 'package:dio/dio.dart';
 import 'dart:convert';
 import 'dart:async';
 import 'dart:typed_data';
 import 'package:get/get.dart';
-
+import 'package:dio/dio.dart';
 import 'user_msg.dart';
 import 'package:flutter/material.dart';
 import 'package:kuangchang_app/user_msg.dart';
 import 'protofile/loginproto/login.pb.dart';
 import 'protofile/registerproto/register.pb.dart';
+import 'protofile/UpdateAvatarProto/UpdateAvatar.pb.dart';
 /// WebSocket地址
 const String _SOCKET_URL = "ws://123.249.9.132:443/ping";
 
@@ -199,7 +201,7 @@ void  Login(Uint8List msg) async
     msghandle(reply);
   });
   print(msg);
-  socket?.add(msg);
+  SendRequest(msg,97,97);
 }
 
 void  Register(Uint8List msg) async
@@ -211,27 +213,35 @@ void  Register(Uint8List msg) async
   socket?.listen((List<int> reply) {
     msghandle(reply);
   });
-  heartbeat();
-  socket?.add(msg);
+  SendRequest(msg,97,98);
 }
 
-void SendRequest(Uint8List msg) async
+void SendRequest(Uint8List msg,int symbol1,int symbol2)
 {
-  socket?.add(msg);
+  Uint8List request=new Uint8List(msg.length+6);
+  request[0]=symbol1;
+  request[1]=symbol2;
+  int len=msg.length;
+  for(int i=5;i>=2;i--){
+    request[i]=len%256;
+    len~/=256;
+  }
+  for(int i=0;i<msg.length;i++)
+    request[i+6]=msg[i];
+  socket?.add(request);
+  //print(request);
+  //print("send ok");
 }
 
 void heartbeat() async
 {
-  /*await Future.delayed(Duration(seconds: 5));
-  socket?.close();
-  print("connect close");
-  //弹窗，标题：连接已中断，内容：是否重新连接？，附带两个按钮，对应重连和取消
-  */
+  //待定，已在服务器中实现
 }
 
 
 msghandle(List<int> reply)
 {
+  print("recvmsg");
   print(reply);
   int s1=reply[0],s2=reply[1];
   List<int> handlereply=[];
@@ -246,6 +256,10 @@ msghandle(List<int> reply)
     var msg=user_register_reply.fromBuffer(handlereply);
     RegisterHandle(msg);
   }
+  else if(s1==97&&s2==99){
+    var msg=UpdateAvatar_reply.fromBuffer(handlereply);
+    UserAvatarHandle(msg);
+  }
   else if(s1==122&&s2==122){
     ConnectionInterruptedHandle();
   }
@@ -253,7 +267,7 @@ msghandle(List<int> reply)
 
 LoginHandle(user_login_reply msg)
 {
-  print(msg);
+  print("loginmsg");
   if(msg.issuccess)
   {
     print("login success");
@@ -304,7 +318,20 @@ RegisterHandle(user_register_reply msg)
   }
   //return "";
 }
+
+UserAvatarHandle(UpdateAvatar_reply msg)
+{
+  if(msg.issuccess)
+  {
+    print("update avatar success");
+    //弹窗显示修改成功
+  }
+}
+
 ConnectionInterruptedHandle(){
   //连接中断弹窗，附带两个按钮，一个是尝试重新连接（reconnect），一个是取消（exit），退出到登录界面
 
 }
+
+
+

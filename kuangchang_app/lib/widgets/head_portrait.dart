@@ -1,6 +1,12 @@
+import 'dart:typed_data';
+import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:dio/dio.dart';
+import '../../server_connection.dart';
+import '../../protofile/UpdateAvatarProto/UpdateAvatar.pb.dart';
+import '../../user_msg.dart';
 
 var imageWidth = 750.0;
 var imageHeight = 424.0;
@@ -113,11 +119,17 @@ class _HeadImageState extends State<HeadImage> {
         // 图片的最大宽度
         maxWidth: 400
     );
+    
     // 更新状态
     setState(() {
       if (pickedFile != null) {
-        _image = pickedFile.path.toString();
-        print(_image);
+        UpdateAvatar_request request=UpdateAvatar_request.create();
+        request.account=UserMsg.UserAccount;
+        request.avatar=File(pickedFile.path.toString()).readAsBytesSync().toString();
+        print(request.avatar.length);
+        var msg=request.writeToBuffer();
+        SendRequest(msg,97,99);
+        //此处修改头像，然后将头像保存在sqlite中
       } else {
         print('没有选择任何图片');
       }
@@ -125,13 +137,4 @@ class _HeadImageState extends State<HeadImage> {
   }
 
 }
-
-
-
-
-
-
-
-
-
 

@@ -1,0 +1,14 @@
+syntax="proto3";
+
+package UpdateAvatar_proto;
+
+message UpdateAvatar_request
+{
+  string account=1;
+  string avatar=2;
+}
+
+message UpdateAvatar_reply
+{
+  bool issuccess=1;
+}

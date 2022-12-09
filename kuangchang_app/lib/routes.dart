@@ -3,6 +3,7 @@ import 'package:fluro/fluro.dart';
 import 'package:kuangchang_app/pages/home/tab_index/topnavigation.dart';
 import 'package:kuangchang_app/pages/login.dart';
 import 'package:kuangchang_app/pages/reward_add/index.dart';
+import 'package:kuangchang_app/pages/setting.dart';
 import 'pages/home/index.dart';
 
 import 'pages/not_found.dart';
@@ -56,6 +57,8 @@ class Routes {
         return RewardAddPage();
       });
 
+
+
   //3.编写 configureRoutes 关联路由名称和处理函数
   static void configureRoutes(FluroRouter router) {
     router.define(home, handler: _homeHandler);
@@ -65,5 +68,6 @@ class Routes {
     router.notFoundHandler = _notFoundHandler;
     router.define(topnavigation, handler: _topnavigationPage);
     router.define(rewardAdd, handler: _rewardAddHandler);
+
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'pages/news/news_page.dart';
+import 'pages/news/TopBar.dart';
 
 
 void main() => runApp(MyApp());//入口函数，MyApp()在runApp里面运行
@@ -22,7 +21,8 @@ class MyApp extends StatelessWidget {//MyApp就是上面入口函数运行所要
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-          body: NewsPage(),
+          body: topBar(),
+          //NewsPage(),
         ));
   }
 }

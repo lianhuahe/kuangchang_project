@@ -55,72 +55,19 @@ class _NewsPageState extends State<NewsPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // 使用背景颜色
-      /*appBar: AppBar(
-        backgroundColor: Colors.white, // 使用背景颜色
-        elevation: 0, // 阴影长度
-        title: Text(
-          '消息',
-          style: TextStyle(color: Colors.black),
-        ),
-      ),*/
-      appBar:const _AppBar(),
-      body: bodyView(),
-    );
-  }
-
-  Widget bodyView() {
-    return GestureDetector(
-      behavior: HitTestBehavior.translucent,
-      onTap: () {
-        // 点击其他地方的时候，让输入框失去焦点
-        Focus.of(context).requestFocus(FocusNode());
-      },
-      child: SafeArea(
-        child: Column(
-          children: [
-            switchView(),
-            refreshView(),
-          ],
+      body: new RefreshIndicator(
+        key: _refreshIndicatorKey,
+        onRefresh: _getData, // onRefresh 参数是一个 Future<Null> 的回调
+        child: new ListView.builder(
+          // 这句是在list里面的内容不足一屏时，list可能会滑不动，加上就一直都可以滑动
+          physics: const AlwaysScrollableScrollPhysics(),
+          itemCount: this.list.length,
+          itemBuilder: (_, int index) => _createItem(index),
         ),
       ),
     );
   }
 
-  Widget switchView(){
-    return Row(
-      children: [
-        Expanded(child: _blueBox()),
-        Expanded(child: _blueBox()),
-      ],
-    );
-  }
-
-  Widget _blueBox() {
-  Widget widget;
-  widget= Container(
-  //width: 50,宽无所谓，会填满
-  height: 50,
-  decoration: BoxDecoration(
-  color: Colors.blue,
-  border: Border.all(),
-  ),
-  );
-  return widget;
-  }
-
-  Widget refreshView(){
-    return new RefreshIndicator(
-      key: _refreshIndicatorKey,
-      onRefresh: _getData, // onRefresh 参数是一个 Future<Null> 的回调
-      child: new ListView.builder(
-        // 这句是在list里面的内容不足一屏时，list可能会滑不动，加上就一直都可以滑动
-        physics: const AlwaysScrollableScrollPhysics(),
-        itemCount: this.list.length,
-        itemBuilder: (_, int index) => _createItem(index),
-      ),
-    );
-  }
 
   Widget _createItem_sys() {
     Widget widget;
@@ -160,7 +107,7 @@ class _NewsPageState extends State<NewsPage>
                                   fontSize: 16, fontWeight: FontWeight.bold),
                             ),
                             Text(
-                              "我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容",
+                              "啊吧啊吧",
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(color: Colors.grey[700]),
@@ -192,41 +139,40 @@ class _NewsPageState extends State<NewsPage>
       return _createItem_sys();
     }
     widget = Container(
-        padding: EdgeInsets.only(left: 16, bottom: 16),
+        padding: EdgeInsets.only(left: 8, bottom: 8),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            ClipRRect(
-              borderRadius: BorderRadius.circular(4),
-              child: CachedNetworkImage(
-                width: 48,
-                height: 48,
-               // placeholder: new CircularProgressIndicator(),//加载动画
-                imageUrl: 'https://picsum.photos/64/64?image=${index}',
-               // errorWidget: new Icon(Icons.error),
-              ),
-            ),
             Expanded(
                 child: GestureDetector(
                     onTap: (){ _onTap("我是数据"); },
                     child: Container(
-                      padding: EdgeInsets.only(left: 16, right: 16, bottom: 8),
+                      padding: EdgeInsets.only(left: 8, right: 8, bottom: 8),
                       decoration: BoxDecoration(
                           border: Border(
                               bottom: BorderSide(width: 0.2, color: Colors.black))),
                       child: Row(
                         children: <Widget>[
+                          CircleAvatar(
+                            radius: 24,
+                            backgroundImage: AssetImage('image/9ab516426a392a03f7f3af14d2588726a2.png'),
+                            child: const SizedBox(
+                              width: 48,
+                              height: 48,
+                            ),
+                          ),
+                          SizedBox(width: 10),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  "我是昵称",
+                                  "玛卡巴卡",
                                   style: TextStyle(
                                       fontSize: 16, fontWeight: FontWeight.bold),
                                 ),
                                 Text(
-                                  "下拉看看效果  ----我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容",
+                                  "下拉看看效果  ----我是内容我是内容我是内容我是内容我是内容",
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(color: Colors.grey[700]),
@@ -241,7 +187,7 @@ class _NewsPageState extends State<NewsPage>
                             width: 64,
                             height: 64,
                            // placeholder: new CircularProgressIndicator(),
-                            imageUrl: 'https://picsum.photos/64/64?image=${index}',
+                            imageUrl: 'https://auto.ironhorse.ru/wp-content/uploads/2013/05/Turbo-911-old.jpg',
                            // errorWidget: new Icon(Icons.error),
                           )
                         ],
@@ -254,20 +200,14 @@ class _NewsPageState extends State<NewsPage>
   }
 }
 
-class _AppBar extends StatelessWidget with PreferredSizeWidget {
-  const _AppBar({Key? key}) : super(key: key);
+class Model {
+  final String name;//昵称
+  final String avatar;//头像
+  final String goodsImage;//物品图片
 
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      foregroundColor: Colors.black,
-      leading: const BackButton(),
-      title: const Text('消息'),//某某界面
-      centerTitle: false,
-      backgroundColor: Colors.white,
-    );
-  }
-
-  @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Model({
+    required this.name,//昵称
+    required this.avatar,//头像
+    required this.goodsImage,//物品图片
+  });
 }
